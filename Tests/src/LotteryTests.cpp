@@ -126,35 +126,27 @@ void LotteryTests::lotteryNoUnqiueNumbersTest()
 CppUnit::Test* LotteryTests::suite()
 {
     CppUnit::TestSuite *suiteOfTests = new CppUnit::TestSuite( "LotteryTests" );
-
     suiteOfTests->addTest( new CppUnit::TestCaller<LotteryTests>( 
     "lotteryHas6NumbersTest", 
     &LotteryTests::lotteryHas6NumbersTest1 ) );
-
     suiteOfTests->addTest( new CppUnit::TestCaller<LotteryTests>( 
     "lotteryHas6NumbersTest", 
     &LotteryTests::lotteryHas6NumbersTest2 ) );
-
     suiteOfTests->addTest( new CppUnit::TestCaller<LotteryTests>( 
     "lotteryDoesntHave6NumbersTest", 
     &LotteryTests::lotteryDoesntHave6NumbersTest1 ) );
-
     suiteOfTests->addTest( new CppUnit::TestCaller<LotteryTests>( 
     "lotteryDoesntHave6NumbersTest", 
     &LotteryTests::lotteryDoesntHave6NumbersTest2 ) );
-
     suiteOfTests->addTest( new CppUnit::TestCaller<LotteryTests>( 
     "lotteryNumbersInRangeTest", 
     &LotteryTests::lotteryNumbersInRangeTest ) );
-
     suiteOfTests->addTest( new CppUnit::TestCaller<LotteryTests>( 
     "lotteryNumbersNotInRangeTest", 
     &LotteryTests::lotteryNumbersNotInRangeTest ) );
-
     suiteOfTests->addTest( new CppUnit::TestCaller<LotteryTests>( 
     "lotteryUniqueNumbersTest", 
     &LotteryTests::lotteryUniqueNumbersTest ) );
-
     suiteOfTests->addTest( new CppUnit::TestCaller<LotteryTests>( 
     "lotteryNoUnqiueNumbersTest", 
     &LotteryTests::lotteryNoUnqiueNumbersTest ) );

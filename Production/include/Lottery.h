@@ -1,4 +1,3 @@
-#include <Asserter.h>
 #include <set>
 #include <utility>
 #include <iostream>
@@ -10,6 +9,4 @@ public:
     Lottery();
     bool validate(std::set<int> t_lotteryNum);
     std::set<int> generate();
-
-private:
 };
