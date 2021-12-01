@@ -14,8 +14,7 @@ void LotteryTests::lotteryHas6NumbersTest1()
 {
     m_lotteryNumbers = { 2, 4, 34, 7, 45, 21};
 
-    bool isValid = m_lottery->validate(m_lotteryNumbers).first;
-    m_lotteryNumbers = m_lottery->validate(m_lotteryNumbers).second;
+    bool isValid = m_lottery->validate(m_lotteryNumbers);
 
     CPPUNIT_ASSERT(m_lotteryNumbers.size() == 6);
     CPPUNIT_ASSERT(isValid == true);
@@ -28,8 +27,7 @@ void LotteryTests::lotteryHas6NumbersTest2()
 {
     m_lotteryNumbers = m_lottery->generate();
 
-    bool isValid = m_lottery->validate(m_lotteryNumbers).first;
-    m_lotteryNumbers = m_lottery->validate(m_lotteryNumbers).second;
+    bool isValid = m_lottery->validate(m_lotteryNumbers);
 
     CPPUNIT_ASSERT(m_lotteryNumbers.size() == 6);
     CPPUNIT_ASSERT(isValid == true);
@@ -42,8 +40,7 @@ void LotteryTests::lotteryDoesntHave6NumbersTest1()
 {
     m_lotteryNumbers = { 2, 4, 34, 7,  21};
 
-    bool isValid = m_lottery->validate(m_lotteryNumbers).first;
-    m_lotteryNumbers = m_lottery->validate(m_lotteryNumbers).second;
+    bool isValid = m_lottery->validate(m_lotteryNumbers);
 
     CPPUNIT_ASSERT(m_lotteryNumbers.size() != 6);
     CPPUNIT_ASSERT(isValid == false);
@@ -56,8 +53,7 @@ void LotteryTests::lotteryDoesntHave6NumbersTest2()
 {
     m_lotteryNumbers = { 2, 4, 34, 7, 45, 21, 9};
 
-    bool isValid = m_lottery->validate(m_lotteryNumbers).first;
-    m_lotteryNumbers = m_lottery->validate(m_lotteryNumbers).second;
+    bool isValid = m_lottery->validate(m_lotteryNumbers);
 
     CPPUNIT_ASSERT(m_lotteryNumbers.size() != 6);
     CPPUNIT_ASSERT(isValid == false);
@@ -70,8 +66,7 @@ void LotteryTests::lotteryNumbersInRangeTest()
 {
     m_lotteryNumbers = { 2, 4, 34, 7, 45, 21};
 
-    bool isValid = m_lottery->validate(m_lotteryNumbers).first;
-    m_lotteryNumbers = m_lottery->validate(m_lotteryNumbers).second;
+    bool isValid = m_lottery->validate(m_lotteryNumbers);
     std::set<int>::iterator itr;
 
 
@@ -89,8 +84,7 @@ void LotteryTests::lotteryNumbersNotInRangeTest()
 {
     m_lotteryNumbers = { 200, 666, -34, -7, 450, 210};
 
-    bool isValid = m_lottery->validate(m_lotteryNumbers).first;
-    m_lotteryNumbers = m_lottery->validate(m_lotteryNumbers).second;
+    bool isValid = m_lottery->validate(m_lotteryNumbers);
     std::set<int>::iterator itr;
 
 
@@ -108,8 +102,7 @@ void LotteryTests::lotteryUniqueNumbersTest()
 {
      m_lotteryNumbers = { 2, 4, 34, 7, 45, 21};
 
-    bool isValid = m_lottery->validate(m_lotteryNumbers).first;
-    m_lotteryNumbers = m_lottery->validate(m_lotteryNumbers).second;
+    bool isValid = m_lottery->validate(m_lotteryNumbers);
 
     CPPUNIT_ASSERT(m_lotteryNumbers.size() == 6);
     CPPUNIT_ASSERT(isValid == true);
@@ -121,8 +114,7 @@ void LotteryTests::lotteryNoUnqiueNumbersTest()
 {
      m_lotteryNumbers = { 2, 4, 34, 7, 45, 45};
 
-    bool isValid = m_lottery->validate(m_lotteryNumbers).first;
-    m_lotteryNumbers = m_lottery->validate(m_lotteryNumbers).second;
+    bool isValid = m_lottery->validate(m_lotteryNumbers);
 
     CPPUNIT_ASSERT(m_lotteryNumbers.size() != 6);
     CPPUNIT_ASSERT(m_lotteryNumbers.size() == 5);

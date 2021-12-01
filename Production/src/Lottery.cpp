@@ -5,7 +5,7 @@ Lottery::Lottery()
 
 }
 
-std::pair<bool,std::set<int>> Lottery::validate(std::set<int> t_lotteryNum)
+bool Lottery::validate(std::set<int> t_lotteryNum)
 {
     bool valid = false;
 
@@ -21,13 +21,13 @@ std::pair<bool,std::set<int>> Lottery::validate(std::set<int> t_lotteryNum)
            }
            else
            {
-               return std::make_pair(false, t_lotteryNum);
+               return false;
            }
            it++;
         }
         
     }
-    return std::make_pair(valid, t_lotteryNum);
+    return valid;
 }
 
 std::set<int> Lottery::generate()

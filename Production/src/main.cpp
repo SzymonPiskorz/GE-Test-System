@@ -3,6 +3,9 @@
 #include <stdlib.h>
 #include <iostream>
 #include <time.h>
+#include <limits>
+
+const auto LineLimit = std::numeric_limits<std::streamsize>::max();
 
 int main()
 {
@@ -25,7 +28,7 @@ int main()
 
         std::set<int>::iterator it = lotteryNums.begin();
 
-        if(lottery.validate(lotteryNums).first)
+        if(lottery.validate(lotteryNums))
         {
             std::cout << "This is a valid lottery number" << std::endl;
         }
@@ -42,6 +45,7 @@ int main()
     }
     else
     {
+        std::cout << "Enter 6 unique numbers in a range from 1 to 46" << std::endl;
         while (inputNum > 0)
         {
            int numInput;
@@ -49,7 +53,7 @@ int main()
            lotteryNums.insert(numInput);
            inputNum--;
         }
-        if(lottery.validate(lotteryNums).first)
+        if(lottery.validate(lotteryNums))
         {
             std::cout << "This is a valid lottery number" << std::endl;
         }
@@ -58,7 +62,8 @@ int main()
             std::cout << "This is not a valid lottery number" << std::endl;
         }
     }
-    
+    std::cin.ignore(LineLimit, '\n');
     std::cin.get();
+
     return 0;
 }
